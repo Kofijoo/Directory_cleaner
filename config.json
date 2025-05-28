@@ -1,0 +1,15 @@
+{
+  "source_directory": "C:/Users/Joshua/Desktop",
+  "extension_groups": {
+    "Image": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"],
+    "Video": [".mp4", ".avi", ".mkv", ".mov", ".webm", ".flv"],
+    "Audio": [".mp3", ".wav", ".flac", ".aac", ".wma"],
+    "Document": [".pdf", ".docx", ".doc", ".txt", ".odt"],
+    "Executable": [".exe", ".msi"]
+  },
+  "excluded_files": ["do_not_touch.txt", "important.docx"],
+  "custom_folder_names": {
+    "Executable": "Installers",
+    "Document": "Docs"
+  }
+}
