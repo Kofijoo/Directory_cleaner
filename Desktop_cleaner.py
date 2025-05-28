@@ -4,8 +4,13 @@ import logging
 import json
 from datetime import datetime
 
-# Configuration
-source_dir = r"C:\Users\Joshua\Desktop"
+# Load config
+with open("config.json", "r") as f:
+    config = json.load(f)
+
+source_dir = config["source_directory"]
+extension_groups = config["extension_groups"]
+
 log_file = os.path.join(source_dir, "desktop_cleaner.log")
 history_file = os.path.join(source_dir, "move_history.json")
 
@@ -15,15 +20,6 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
-
-# Extension groups
-extension_groups = {
-    "Image": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp"],
-    "Video": [".mp4", ".avi", ".mkv", ".mov", ".webm", ".flv"],
-    "Audio": [".mp3", ".wav", ".flac", ".aac", ".wma"],
-    "Document": [".pdf", ".docx", ".doc", ".txt", ".odt"],
-    "Executable": [".exe", ".msi"]
-}
 
 def get_file_category(name, is_dir):
     if is_dir:
